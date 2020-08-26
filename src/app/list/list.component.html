@@ -1,30 +1,35 @@
 <div class="list-container">
   <h2>Providers</h2>
+  <!-- Headers for unselected providers -->
   <div *ngIf="unselectedProviders.length!==0" class="unselectedHeader">
     <h3>Please click on a unselected provider to move it into selected providers</h3>
   </div>
   <div *ngIf="unselectedProviders.length===0" class="unselectedHeader">
     <h3>There are no unselected providers available</h3>
   </div>
+  <!-- I have created a table which will then be used to display all the contacts that are in the unselected providers -->
   <table *ngIf="unselectedProviders.length!==0">
     <tr>
       <th>Name</th>
       <th>Address</th>
       <th>Phone</th>
     </tr>
+    <!-- Here I am looping the table rows for unselectedProviders -->
     <tr *ngFor="let unselected of unselectedProviders" (click)="toSelectedProviders(unselected)">
       <td>{{unselected.name}}</td>
       <td>{{unselected.address}}</td>
       <td>{{unselected.phone}}</td>
     </tr>
   </table>
-  <hr style="margin-top: 25px;"/>
+  <hr style="margin-top: 25px;" />
+  <!-- Headers for selected providers -->
   <div *ngIf="selectedProviders.length!==0" class="unselectedHeader">
     <h3>The following are the selected providers</h3>
   </div>
   <div *ngIf="selectedProviders.length===0" class="unselectedHeader">
     <h3>There are no selected providers available</h3>
   </div>
+  <!-- I have created a table which will then be used to display all the contacts that are in the selected providers -->
   <table *ngIf="selectedProviders.length!==0">
     <tr>
       <th>Name</th>
@@ -32,6 +37,7 @@
       <th>Phone</th>
       <th>Cancel</th>
     </tr>
+    <!-- Here I am looping the table rows for selectedProviders -->
     <tr *ngFor="let selected of selectedProviders">
       <td>{{selected.name}}</td>
       <td>{{selected.address}}</td>
