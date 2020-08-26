@@ -7,6 +7,11 @@
 
 h2 {
   border-bottom: 1px solid grey;
+  color: crimson;
+}
+
+h3 {
+  color: darkred;
 }
 
 table {
@@ -32,4 +37,12 @@ tr:nth-child(even) {
 hr {
   border: 5px solid green;
   border-radius: 10px;
+}
+
+th {
+  color: cornflowerblue;
+}
+
+tr {
+  color: darkslateblue;
 }
